@@ -16,45 +16,34 @@ import java.util.List;
 public class CartPage {
 
     private WebDriver driver;
+    @FindBy(how = How.XPATH,using = "//*[@id=\"center_column\"]/ul/li/div/div[2]/h5/a")
+    WebElement blouseButton;
 
-    @FindBy(how = How.CSS,using = ".minicart__action--toggle-open")
+    @FindBy(how = How.XPATH,using = "//*[@id=\"add_to_cart\"]/button")
     WebElement cartButton;
 
-    @FindBy(how = How.CSS,using = ".minicart__action--buy")
-    WebElement openCartButton;
+    @FindBy(how = How.XPATH,using = "//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/a")
+    WebElement ProceedToCheckoutButton;
 
-    @FindBy(how = How.CSS,using = ".product-item__name")
-    WebElement item;
 
     public CartPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver,this);
     }
 
-    public String selectProduct() {
+
+    public void selectProduct()  {
         /* Search the required WebElements and click them */
-        WebElement iconButton = waitClick(cartButton);
-        iconButton.click();
-        WebElement openCart = waitClick(openCartButton);
-        openCart.click();
-        WebElement itemName = waitClick(item);
+        WebElement blouse = waitClick(blouseButton);
+        blouse.click();
 
-
-        /* Return the item name */
-        return (itemName.getText());
+        WebElement cart = waitClick(cartButton);
+        cart.click();
     }
 
-    public String addItem() {
-        /* Search the first item in the search */
-        List <WebElement> elementName =  driver.findElements(By.cssSelector(".product-item__name"));
-        List <WebElement> elementAdd =  driver.findElements(By.cssSelector(".product-item__add-to-cart"));
-        clickOnElement(elementAdd.get(0));
-        /* Return the item name in the cart */
-        return (elementName.get(0).getText());
-    }
-
-    private void clickOnElement(@NotNull WebElement element) {
-        element.click();
+    public void addItem() {
+        WebElement ProceedToCheckout = waitClick(ProceedToCheckoutButton);
+        ProceedToCheckout.click();
     }
 
     private WebElement waitClick(WebElement element) {

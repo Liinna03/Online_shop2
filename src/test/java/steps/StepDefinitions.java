@@ -9,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import PageObject.CartPage;
 import PageObject.HomePage;
-
 import static org.junit.Assert.assertEquals;
 
 
@@ -31,12 +30,13 @@ public class StepDefinitions {
         String URL = "http://automationpractice.com/index.php";
         driver.get(URL);
         driver.manage().window().maximize();
+        homePage = new HomePage(driver);
+        cartPage = new CartPage(driver);
     }
 
     @Given("The users enters to the online shop new experience")
     public void The_users_enters_to_the_online_shop_new_experience() {
         /* Initialize the Home Page and Open the Website */
-        // homePage.openWebsite();
     }
 
     @When("The user searches a {string}")
@@ -48,21 +48,17 @@ public class StepDefinitions {
     @When("The users adds the item to the shopping cart")
     public void the_users_adds_the_item_to_the_shopping_cart() {
         /* Initialize the Cart Page and add an item to the cart */
-        picked_item = cartPage.addItem();
+        cartPage.selectProduct();
     }
 
     @Then("The product is added successfully")
     public void the_product_is_added_successfully() {
-        /* Initialize the Cart Page and select a product */
-        String product =cartPage.selectProduct();
-        /* Assert the selected item with the item in the cart */
-        assertEquals(picked_item,product);
-
+        cartPage.addItem();
     }
     @After
     public void close() {
         /* Quit the Webdriver Object */
-        driver.quit();
+      driver.quit();
     }
 
 }

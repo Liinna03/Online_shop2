@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="RunCucumberTest" time="25.806" errors="1" skipped="0">
+<testsuite tests="1" failures="0" name="RunCucumberTest" time="25.569" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2020.2.1"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
@@ -59,32 +59,5 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="Add product to the shopping cart" name="User adds a product to the shopping cart" time="25.806">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at steps.StepDefinitions.the_user_adds_a_product_to_the_shopping_cart(StepDefinitions.java:45)
-	at ✽.The user searches a &apos;blouse&apos;(classpath:Shop.feature:7)
-</error>
-    <system-out>Feature: Add product to the shopping cart
-  As a User of the online shop
-  I want to select any product
-  and add that product to the shopping cart
-
-  Scenario: User adds a product to the shopping cart         &amp;#27;[90m# Shop.feature:5&amp;#27;[0m
-    &amp;#27;[32mGiven &amp;#27;[0m&amp;#27;[32mThe users enters to the online shop new experience&amp;#27;[0m &amp;#27;[90m# StepDefinitions.The_users_enters_to_the_online_shop_new_experience()&amp;#27;[0m
-    &amp;#27;[31mWhen &amp;#27;[0m&amp;#27;[31mThe user searches a &amp;#27;[0m&amp;#27;[31m&amp;#27;[1m&apos;blouse&apos;&amp;#27;[0m                        &amp;#27;[90m# StepDefinitions.the_user_adds_a_product_to_the_shopping_cart(String)&amp;#27;[0m
-      &amp;#27;[31mjava.lang.NullPointerException
-	at steps.StepDefinitions.the_user_adds_a_product_to_the_shopping_cart(StepDefinitions.java:45)
-	at ?.The user searches a &apos;blouse&apos;(classpath:Shop.feature:7)
-&amp;#27;[0m
-    &amp;#27;[36mAnd &amp;#27;[0m&amp;#27;[36mThe users adds the item to the shopping cart&amp;#27;[0m         &amp;#27;[90m# StepDefinitions.the_users_adds_the_item_to_the_shopping_cart()&amp;#27;[0m
-    &amp;#27;[36mThen &amp;#27;[0m&amp;#27;[36mThe product is added successfully&amp;#27;[0m                   &amp;#27;[90m# StepDefinitions.the_product_is_added_successfully()&amp;#27;[0m
-</system-out>
-    <system-err>Starting ChromeDriver 85.0.4183.87 (cd6713ebf92fa1cacc0f1a598df280093af0c5d7-refs/branch-heads/4183@{#1689}) on port 48302
-Only local connections are allowed.
-Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-sep. 12, 2020 6:15:49 P.�M. org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: W3C
-</system-err>
-  </testcase>
+  <testcase classname="Add product to the shopping cart" name="User adds a product to the shopping cart" time="25.569"/>
 </testsuite>
