@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: RunCucumberTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 26.382 sec <<< FAILURE!
+User adds a product to the shopping cart(Add product to the shopping cart)  Time elapsed: 25.806 sec  <<< ERROR!
+java.lang.NullPointerException
+	at steps.StepDefinitions.the_user_adds_a_product_to_the_shopping_cart(StepDefinitions.java:45)
+	at ✽.The user searches a 'blouse'(classpath:Shop.feature:7)
+
